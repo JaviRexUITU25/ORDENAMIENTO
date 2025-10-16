@@ -1,16 +1,20 @@
-alturas = [198,159,180,170,175,160,161,195,185,156]
+alturas1 = [198,159,180,170,175,160,161,195,185,156]
+alturas2 = [198,159,180,170,175,160,161,195,185,156]
+alturas3= [198,159,180,170,175,160,161,195,185,156]
+alturas4 = [198,159,180,170,175,160,161,195,185,156]
+
 def bubble():
-    for i in range(len(alturas)-1):
-        for j in range(len(alturas)-1-i):
-            if alturas[j] > alturas[j+1]:
-                alturas[j], alturas[j+1] = alturas[j+1], alturas[j]
+    for i in range(len(alturas1)-1):
+        for j in range(len(alturas1)-1-i):
+            if alturas1[j] > alturas1[j+1]:
+                alturas1[j], alturas1[j+1] = alturas1[j+1], alturas1[j]
 def selection():
-    for i in range(len(alturas)):
+    for i in range(len(alturas2)):
         min_index = i
-        for j in range(i + 1, len(alturas)):
-            if alturas[j] < alturas[min_index]:
+        for j in range(i + 1, len(alturas2)):
+            if alturas2[j] < alturas2[min_index]:
                 min_index = j
-        alturas[i], alturas[min_index] = alturas[min_index], alturas[i]
+        alturas2[i], alturas2[min_index] = alturas2[min_index], alturas2[i]
 def quicksort(lista):
     if len(lista) <= 1:
         return lista
@@ -41,19 +45,19 @@ def mainmenu():
         option = int(input("Ingrese la opcion que desea elegir: "))
         match option:
             case 1:
-                print("ALTURAS ORIGINALES: ", alturas)
+                print("ALTURAS ORIGINALES: ", alturas1)
                 bubble()
-                print("ALTURAS ORDENADAS: ", alturas)
+                print("ALTURAS ORDENADAS: ", alturas1)
             case 2:
-                print("ALTURAS ORIGINALES: ", alturas)
+                print("ALTURAS ORIGINALES: ", alturas2)
                 selection()
-                print("ALTURAS ORDENADAS: ", alturas)
+                print("ALTURAS ORDENADAS: ", alturas2)
             case 3:
-                print("ALTURAS ORIGINALES: ", alturas)
-                print("ALTURAS ORDENADAS: ", quicksort(alturas))
+                print("ALTURAS ORIGINALES: ", alturas3)
+                print("ALTURAS ORDENADAS: ", quicksort(alturas3))
             case 4:
-                print("ALTURAS ORIGINALES:", alturas)
-                print("ALTURAS ORDENADAS: ", bogo(alturas))
+                print("ALTURAS ORIGINALES:", alturas4)
+                print("ALTURAS ORDENADAS: ", bogo(alturas4))
             case 5:
                 print("Saliendo del programa....")
                 break
