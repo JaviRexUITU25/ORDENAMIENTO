@@ -1,4 +1,4 @@
-alturas = [198,159,180,170,175]
+alturas = [198,159,180,170,175,160,161,195,185,156]
 def bubble():
     for i in range(len(alturas)-1):
         for j in range(len(alturas)-1-i):
@@ -19,8 +19,16 @@ def quicksort(lista):
     iguales =[x for x in lista if x == pivote]
     mayores =[x for x in lista if x > pivote]
     return quicksort(menores) + iguales + quicksort(mayores)
-
-    pass
+import random
+def lista_ordenada(lista):
+    return all(lista[i] <= lista[i+1] for i in range(len(lista)-1))
+def bogo(lista):
+        intentos = 0
+        while not lista_ordenada(lista):
+            random.shuffle(lista)
+            intentos +=1
+        print(f"Ordenada despues de {intentos} intentos")
+        return lista
 def saludo():
     print("-"*10+ "OPCIONES DE ORDENAMIENTO EN PYTHON" +"-"*10)
 def mainmenu():
@@ -42,10 +50,10 @@ def mainmenu():
                 print("ALTURAS ORDENADAS: ", alturas)
             case 3:
                 print("ALTURAS ORIGINALES: ", alturas)
-
                 print("ALTURAS ORDENADAS: ", quicksort(alturas))
             case 4:
-                pass
+                print("ALTURAS ORIGINALES:", alturas)
+                print("ALTURAS ORDENADAS: ", bogo(alturas))
             case 5:
                 print("Saliendo del programa....")
                 break
